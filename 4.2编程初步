@@ -1,0 +1,376 @@
+// 实验4.2 编程初步
+
+#include <stdio.h>
+
+void base1()
+{
+	char c1,c2;
+	c1=97;c2=98;
+	printf("c1=%c,c2=%c\n",c1,c2);
+	printf("c1=%d,c2=%d\n",c1,c2);
+	c1=c1-32;c2=c2-32;
+	printf("c1=%c,c2=%c\n",c1,c2);
+	printf("c1=%d,c2=%d\n",c1,c2);
+ }
+ 
+void base2()
+ {
+ 	int i,m,n;
+ 	i=5;
+ 	printf("before i++ i=%d\n",i);
+ 	m=i++;
+ 	printf("after i++ i=%d\n",i);
+ 	n=++i;
+ 	printf("after++i i=%d m=%d n=%d\n",i,m,n);
+ }
+ 
+void base3()
+ {
+ 	int a=3;
+ 	printf("%d\n",a+(a-=a*a));
+ }
+ 
+void base4()
+ {
+ 	int n,d1,d2,d3,d4;
+ 	scanf("%d",&n);
+ 	d1=n%10;
+ 	d2=(n%100)/10;
+ 	d3=(n%1000)/100;
+ 	d4=(n%10000)/1000;
+ 	printf("n:%d change to:%d%d%d%d\n",n,d1,d2,d3,d4);
+ }
+ 
+void base5()
+{
+
+	int a=12,n=5;
+		a+=a;
+		printf("(1)a+=a=%d      ",a);
+		a=12;
+		a-=2;
+		printf("(2)a-=2=%d   ",a);
+		a=12;
+		a*=2+3;
+		printf("(3)a*=2+3=%d\n",a);
+		a=12;
+		a%=(n%=2);
+		printf("(4)a%%=(n%%=2)=%d  ",a);
+		a=12;
+		a/=a+a;
+		printf("(5)a/=a+a=%d  ",a);
+		a=12;
+		a+=a-=a*=a;
+		printf("(6)a+=a-=a*=a=%d\n",a);
+ } 
+ 
+void base6()
+{
+    #define k 2
+    #define l 3
+    #define o 3.5
+    #define p 2.5
+
+	float z=0;
+	z=(float)(k+l)/2+(int)o%(int)p;
+	printf("(1)(float)(a+b)/2+(int)x%%(int)y=%0.2f\n",z);
+	z=(float)l+l/2+(int)o%(int)p;
+	printf("(2)(float)a+b/2+(int)x%%(int)y=%0.2f\n",z);
+	z=(float)(k+l/2)+(int)o%(int)p;
+	printf("(3)(float)(a+b/2)+(int)x%%(int)y=%0.2f\n",z);
+}
+
+void base7()
+{
+	int n1,n2,n3,sum;
+	float ave;
+	printf("请输入三个整数\n");
+	scanf("%d%d%d",&n1,&n2,&n3);
+	sum=n1+n2+n3;
+	ave=sum/3.0;
+	printf("%d+%d+%d=%d  (%d+%d+%d)/3=%0.2f",n1,n2,n3,sum,n1,n2,n3,ave);
+}
+
+void base8()
+{
+	int n;
+	printf("请输入一个ASCII码值:\n将输出它所对应的字符\n");
+	scanf("%d",&n);
+	printf("%d--->%c",n,n);	
+}
+
+void base9()
+{
+	int q,w,e;
+	printf("请输入任意三个一位整数，将输出由其组成的一个整数\n");
+	scanf("%d%d%d",&q,&w,&e);
+	printf("%d%d%d",q,w,e);
+}
+
+void base10()
+{
+	char n;
+	printf("请输入一个大写字母，将输出它的小写\n");
+    scanf(" %c",&n);
+    n+=32;
+	printf("%c",n);
+}
+
+void base11()
+{
+	float m,n,q,w;
+	printf("请输入任意两个浮点数，将交换它们的值\n");
+	printf("m=   n=\n");
+	scanf("%f%f",&m,&n);
+	q=m;
+	w=n;
+	n=q;
+	m=w;
+	printf("m=%0.5f  n=%0.5f\n",m,n);
+}
+
+void base12()
+{
+	int q,w,e;
+	printf("请输入三个整数，分别代表年、月、日:\n");
+	scanf("%d%d%d",&q,&w,&e);
+	printf("%d年|%d月|%d日",q,w,e);
+}
+
+void base13()
+{
+	float s,h;
+	printf("请输入摄氏温度C：\n");
+	scanf("%f",&s);
+	h=(9/5)*s+32;
+	printf("摄氏温度C:%0.2f   华氏温度F:%0.2f",s,h);
+}
+
+#include <math.h>
+
+void base14()
+{
+	float q,w,e;
+	printf("请输入直角三角形两条直角边的长度，将计算直角三角形的斜边长\n");
+	scanf("%f%f",&q,&w);
+	e=sqrt(q*q+w*w);
+	printf("斜边的长度为%0.2f",e);
+}
+
+void pro1()
+{
+	int a,b,h;
+	float s;
+	a=5;b=10;h=6;
+	s=(a+b)*h/2;
+	printf("a=%d,b=%d,h=%d,s=%f\n",a,b,h,s);
+}
+
+void pro2()
+{
+	int a,b,c;
+	float d,v1,v2;
+	scanf("%d%d%d",&a,&b,&c);
+	d=b*b-4*a*c;
+	v1=(-1*b+sqrt(d))/2/a;
+	v2=(b-sqrt(d))/2/a;
+	printf("v1=%f",v1);
+	printf("v2=%f",v2);
+}
+
+void pro3()
+{
+	char a,b,c;
+    printf("请输入三个数字字符，将输出由它们组成的一个整数\n");
+	scanf(" %c %c %c",&a,&b,&c);
+	printf("%d",(a-'0')*100+(b-'0')*10+(c-'0')); 
+}
+
+void pro4()
+{
+	double x;
+	printf("请输入任意一个浮点数x(1.0≦x≦100.0),将计算x^5\n");
+	scanf("%lf",&x);
+	x=x*x*x*x*x;
+	printf("x^5=%lf",x);
+}
+
+void pro5()
+{
+	int v=10,a=2,s=0;
+	float vp=0.0;
+	v=10+a*20;
+	s=10*20+1/2*a*20*20;
+	vp=s/20;
+	printf("初速度为10m/s,加速度为2m/s^2的匀加速运动20s以后的速度为%dm/s,20s内走过的路程为%dm,平均速度为%0.2fm/s\n",v,s,vp);
+}
+
+void pro6()
+{
+	double n,x;
+	printf("请输入水的夸脱数:__qt.\n");
+	scanf("%lf",&n);
+	x=n*950/3e-23;
+	printf("%0.2lfqt的水中包含%g个水分子\n",n,x);
+}
+ 
+void pro7()
+{
+	float a,b,c,s,S;
+	printf("请输入三角形的三条边的长度，将计算三角形的面积\n");
+	scanf("%f%f%f",&a,&b,&c);
+	s=(a+b+c)/2;
+	S=sqrt(s*(s-a)*(s-b)*(s-c));
+	printf("三角形的面积为%0.2f",S);
+ }
+
+#define Pi 3.14
+
+void pro8()
+{
+	float r=1.5,h=3,c=0,s=0,v=0;
+	c=2*Pi*r;
+	s=c*h+Pi*r*r*2;
+	v=Pi*r*r*h;
+	printf("底面半径为1.5，高为3.0的圆柱底面周长是%0.2f,表面积为%0.2f,体积为%0.2f.\n",c,s,v);
+}
+
+void pro9()
+{
+	double u,r1,r2,r3,r4,i1,i2,i3,i4,r;
+	u=220;r1=10000;r2=10000;r3=200000;r4=200000;
+	r=1/(1/r1+1/r2+1/r3+1/r4);
+	i1=u/r1;
+	i2=u/r2;
+	i3=u/r3;
+	i4=u/r4;
+	printf("R=%lf\ni1=%f\ni2=%f\ni3=%f\ni4=%f\n",r,i1,i2,i3,i4);
+}
+
+void pro10()
+{
+	int q,w,e;
+	printf("请输入天数:\n");
+	scanf("%d",&q);
+	w=q/7;
+	e=q%7;
+	printf("%d周%d天",w,e);
+}
+
+void pro11()
+{
+	char q,w,e,r,t;
+	printf("请输入5位字母串，会将其转换为密码\n");
+	scanf(" %c%c%c%c%c",&q,&w,&e,&r,&t);
+	printf("原文:%c%c%c%c%c\n",q,w,e,r,t);
+    switch(q)
+    {
+    	case 87:printf("密码:A");break;
+    	case 88:printf("密码:B");break;
+        case 89:printf("密码:C");break;
+        case 90:printf("密码:D");break;
+        case 119:printf("密码:a");break;
+    	case 120:printf("密码:b");break;
+        case 121:printf("密码:c");break;
+        case 122:printf("密码:d");break;
+        default:q+=4;printf("密码:%c",q);  
+	}
+	switch(w)
+    {
+    	case 87:printf("A");break;
+    	case 88:printf("B");break;
+        case 89:printf("C");break;
+        case 90:printf("D");break;
+        case 119:printf("a");break;
+    	case 120:printf("b");break;
+        case 121:printf("c");break;
+        case 122:printf("d");break;
+        default:w+=4;printf("%c",w);  
+	}
+	switch(e)
+    {
+    	case 87:printf("A");break;
+    	case 88:printf("B");break;
+        case 89:printf("C");break;
+        case 90:printf("D");break;
+        case 119:printf("a");break;
+    	case 120:printf("b");break;
+        case 121:printf("c");break;
+        case 122:printf("d");break;
+        default:e+=4;printf("%c",e);  
+	}
+	switch(r)
+    {
+    	case 87:printf("A");break;
+    	case 88:printf("B");break;
+        case 89:printf("C");break;
+        case 90:printf("D");break;
+        case 119:printf("a");break;
+    	case 120:printf("b");break;
+        case 121:printf("c");break;
+        case 122:printf("d");break;
+        default:r+=4;printf("%c",r);  
+	}
+	switch(t)
+    {
+    	case 87:printf("A");break;
+    	case 88:printf("B");break;
+        case 89:printf("C");break;
+        case 90:printf("D");break;
+        case 119:printf("a");break;
+    	case 120:printf("b");break;
+        case 121:printf("c");break;
+        case 122:printf("d");break;
+        default:t+=4;printf("%c",t);  
+	}
+}
+
+void pro12()
+{
+	int a,b,c;
+	printf("请输入一个两位正整数，将对其n平方后取十位数和个位数构成一个新的整数\n");
+	scanf("%d",&a);
+	b=(a*a)/10%10;
+	c=(a*a)%10;
+	if(a==10)
+	  printf("0");
+	  else
+	    printf("%d%d",b,c);
+}
+
+void main()
+ {
+ 	int option;
+ 	printf("input the No:  基础练习请输入101-114，进阶练习请输入201-212\n");
+ 	scanf("%d",&option);
+ 	
+ 	switch(option)
+ 	{
+ 		case 101:base1();break;
+ 		case 102:base2();break;
+		case 103:base3();break; 
+		case 104:base4();break;
+		case 105:base5();break;
+		case 106:base6();break;
+		case 107:base7();break;
+		case 108:base8();break;
+		case 109:base9();break;
+		case 110:base10();break;
+		case 111:base11();break;
+		case 112:base12();break;
+		case 113:base13();break;
+		case 114:base14();break;
+		case 201:pro1();break;
+		case 202:pro2();break;
+		case 203:pro3();break;
+		case 204:pro4();break;
+		case 205:pro5();break;
+		case 206:pro6();break;
+		case 207:pro7();break;
+		case 208:pro8();break;
+		case 209:pro9();break;
+		case 210:pro10();break;
+		case 211:pro11();break;
+		case 212:pro12();
+	  } 
+ }
